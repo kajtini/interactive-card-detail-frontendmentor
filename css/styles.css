@@ -1,0 +1,273 @@
+:root {
+  --clr-primary-error: hsl(0, 100%, 66%);
+
+  --clr-neutral-white: hsl(0, 0%, 100%);
+  --clr-neutral-light-violet: hsl(270, 3%, 87%);
+  --clr-neutral-dark-violet: hsl(279, 6%, 55%);
+  --clr-neutral-very-dark-violet: hsl(278, 68%, 11%);
+
+  --font-primary: "Space Grotesk", sans-serif;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  background-image: url(../images/bg-main-mobile.png);
+  background-repeat: no-repeat;
+  font-family: var(--font-primary);
+}
+
+main {
+  padding: 2rem 1.5rem;
+}
+
+.user-input {
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--clr-neutral-light-violet);
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+
+.user-input--wrong {
+  border: 1px solid var(--clr-primary-error);
+}
+
+.user-input:focus {
+  outline: none;
+  border: 1px solid var(--clr-neutral-very-dark-violet);
+}
+
+.card-view {
+  margin-bottom: 18rem;
+}
+
+.view__front {
+  position: relative;
+}
+
+.card__front {
+  position: absolute;
+  z-index: 1;
+  top: 5.5rem;
+  width: 18rem;
+}
+
+.name-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 15rem;
+}
+
+.card__logo {
+  height: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card__number {
+  color: var(--clr-neutral-white);
+  letter-spacing: 1px;
+  margin-bottom: 0.7rem;
+}
+
+.card__name,
+.card__date {
+  color: var(--clr-neutral-white);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.view__details--front {
+  position: absolute;
+  z-index: 2;
+  top: 7rem;
+  left: 1.5rem;
+}
+
+.view__details--back {
+  position: absolute;
+  right: 2.2rem;
+  top: 4.22rem;
+}
+
+.card__cvc {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--clr-neutral-white);
+}
+
+.view__back {
+  position: relative;
+}
+
+.card__back {
+  position: absolute;
+  width: 18rem;
+  top: -2px;
+  right: 0;
+}
+
+.user-input::placeholder {
+  color: var(--clr-neutral-light-violet);
+}
+
+.input__type {
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: var(--clr-neutral-very-dark-violet);
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.user-inputs > .user-input {
+  width: 100%;
+}
+
+.month-year-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.month-year-wrapper > .user-input {
+  width: 4.2rem;
+}
+
+.input--cvc {
+  width: 100%;
+}
+
+.input--wrong {
+  color: var(--clr-primary-error);
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.btn:link,
+.btn:visited {
+  color: var(--clr-neutral-white);
+}
+
+.btn {
+  width: 100%;
+  padding: 0.8rem 0;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--clr-neutral-very-dark-violet);
+}
+
+.complete {
+  width: 327px;
+}
+
+.complete__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.complete__icon {
+  margin-bottom: 1.5rem;
+}
+
+.complete__thanks {
+  text-transform: uppercase;
+  color: var(--clr-neutral-very-dark-violet);
+  letter-spacing: 2px;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.complete__info {
+  color: var(--clr-neutral-dark-violet);
+  margin-bottom: 3rem;
+}
+
+.hidden {
+  display: none;
+}
